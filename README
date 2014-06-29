@@ -3,42 +3,46 @@ Purpose:
 Combine directory path lists into a single directory path list.
 
 This utility is intended to be used in UNIX or Linux shell scripts for logins,
-configuration, makefiles, and thi like.  With a few changes it could be adapted
- for other operating systems such as Windows or VMS.
+configuration, makefiles, and the like.  With a few changes it could be adapted
+for other operating systems such as Windows or VMS.
 
 Synopsis:
 
-	catpath [-d] [-f] [-b] [-s separator] [-x] path...
+    catpath [-d] [-f] [-b] [-s separator] [-x] path...
 
 Options:
 
-	-d  Allow duplicates.  By default, catpath will not include a directory in
-        the output more than once.
+    -d  Allow duplicates.  By default, catpath will not include a directory
+        in the output more than once.
 
-	-f  Include a directory in the output even if it doesn't exist.  By default,
-        if a directory name starts with '/', catpath will verify the directory's
-        existence before includind it in the output.
+    -f  Include a directory in the output even if it doesn't exist.  By
+        default, if a directory name starts with '/', catpath will verify
+        the directory's existence before includind it in the output.
 
-	-h  Display a help message and then exit without doing anything.
+    -h  Display a help message and then exit without doing anything.
 
-	-s  Specify a separator character to be used to separate directory paths,
-        both on input and on output.  It defaults to a colon (':').
+    -s  Specify a separator character to be used to separate directory
+        paths, both on input and on output.  It defaults to a colon (':').
 
-	-x  If a directory path starts with a tilde ('~'), expand it into the
-        user's home directory (as defined by the environmental variable $HOME).
+    -x  If a directory path starts with a tilde ('~'), expand it into the
+        user's home directory (as defined by the environmental variable
+        $HOME).
 
-catpath reads the non-option command line arguments and combines them into a single
-path list, tidying them up along the way.
+catpath reads the non-option command line arguments and combines them into
+a single path list, tidying them up along the way.
 
-There are three reasons to use catpath instead of simple shell scripting to build directory
-path lists:
+There are three reasons to use catpath instead of simple shell scripting
+to build directory path lists:
 
-1. catpath avoids duplications; i.e. it won't include any given directory path more than once
-(this feature may be suppressed with the -d option).
+1. catpath avoids duplications; i.e. it won't include any given directory
+path more than once (this feature may be suppressed with the -d option).
 
-2. If a directory path starts with the root directory, catpath will verify the existence of the
-directory before including it in the list (this feature may be suppressed with the -f option).
+2. If a directory path starts with the root directory, catpath will
+verify the existence of the directory before including it in the list
+(this feature may be suppressed with the -f option).
 
-3, catpath eliminates extra colons that sometimes sneak into manually built path lists.
+3, catpath eliminates extra path separators that sometimes sneak into
+manually built path lists.
 
-It is possible to do these things with shell scripts, but cumbersome.  catpath makes it easy.
+It is possible to do these things with shell scripts, but cumbersome.
+catpath makes it easy.

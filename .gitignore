@@ -1,0 +1,10 @@
+*.o
+*.so
+*.a
+*.tar
+*.tz
+*.zip
+*.gz
+*~
+*.bak
+*.swp
